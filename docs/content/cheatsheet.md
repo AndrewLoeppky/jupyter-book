@@ -224,6 +224,14 @@ See [Citations](https://jupyterbook.org/content/citations.html?highlight=bibliog
   - 1. First item
     2. Second item
     	1. First sub-item
+* - ```md
+  	1. First item
+    2. Second item
+    	* First sub-item
+    ```
+  - 1. First item
+    2. Second item
+    	* First subitem
 ``````
 
 ### Unordered List
@@ -237,9 +245,67 @@ See [Citations](https://jupyterbook.org/content/citations.html?highlight=bibliog
 * - ```md
   	* First item
     * Second item
-    	* First sub-item
+    	* First subitem
     ```
   - * First item
     * Second item
-    	* First sub-item
+    	* First subitem
+* - ```md
+  	* First item
+    	1. First subitem
+    	2. Second subitem
+    ```
+  - * First item
+    	1. First subitem
+    	2. Second subitem
+``````
+
+## Links
+
+``````{list-table}
+:header-rows: 1
+:widths: 20 20 10
+
+* - Text
+  - Example
+  - Result
+* - ```md
+    [text](target)
+    ```
+  - ```md
+  	[Jupyter Book](https://jupyterbook.org)
+  	```
+  - [Jupyter Book](https://jupyterbook.org)
+* - ```md
+    [text](relative_path)
+    ```
+  - ```md
+  	[PDF documentation](../advanced/pdf)
+    ```
+  - [PDF documentation](../advanced/pdf)
+* - ```md
+    [text](target "title")
+    ```
+  - ```md
+  	[Jupyter Book](https://jupyterbook.org "JB Homepage")
+  	```
+  - [Jupyter Book](https://jupyterbook.org "JB Homepage")
+* - ```md
+    <target>
+    ```
+  - ```md
+    <https://jupyterbook.org>
+    ```
+  - <https://jupyterbook.org>
+* - ```md
+    [text][key]
+    ```
+  - ```md
+    [Jupyter Book][intro_page]
+
+    [intro_page]: https://jupyterbook.org
+    ```
+  - [Jupyter Book][intro_page]
+
+    [intro_page]: https://jupyterbook.org
 ``````
