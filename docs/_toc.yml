@@ -18,6 +18,7 @@
     - file: content-types/restructuredtext
 
 - header: Write book content
+- file: content/cheatsheet
 - file: content/myst
 - file: content/content-blocks
 - file: content/citations
