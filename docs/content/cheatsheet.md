@@ -553,3 +553,118 @@ To add a label to your table simply include a `:name:` parameter followed by the
     of an important directive.
     ```
 ``````
+
+## Figures and Images
+
+``````{margin}
+<br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/>
+```{note}
+Content is not permitted in image directive.
+```
+``````
+
+``````{list-table}
+:header-rows: 1
+:widths: 10 20 20
+
+* - Text
+  - Example
+  - Result
+* - ````md
+    ```{figure} ./path/to/figure.jpg
+    :name: label
+
+    caption
+    ```
+    ````
+  - ````md
+    ```{figure} ../images/C-3PO_droid.png
+    :height: 150px
+    :name: figure-example
+
+    Here is my figure caption!
+    ```
+    ````
+  - ```{figure} ../images/C-3PO_droid.png
+    :height: 150px
+    :name: figure-example
+
+    Here is my figure caption!
+    ```
+* - ````md
+    ```{image} ./path/to/figure.jpg
+    :name: label
+    ```
+    ````
+  - ````md
+    ```{image} ../images/C-3PO_droid.png
+    :height: 150px
+    :name: image-example
+    ```
+    ````
+  - ```{image} ../images/C-3PO_droid.png
+    :height: 150px
+    :name: image-example
+    ```
+``````
+
+### Referencing Figures
+
+``````{list-table}
+:header-rows: 1
+:widths: 10 20 20
+
+* - Text
+  - Example
+  - Result
+* - ```md
+    {numref}`label`
+    ```
+  - ```md
+    {numref}`figure-example`is a
+    figure example.
+    ```
+  - {numref}`figure-example` is a
+    figure example.
+* - ```md
+    {numref}`text %s <label>`
+    ```
+  - ```md
+    {numref}`Figure %s <figure-example>`
+    is an example.
+    ```
+  - {numref}`Figure %s <figure-example>`
+    is an example.
+* - ```md
+    {ref}`text <label>`
+    ```
+  - ```md
+    This {ref}`figure <figure-example>`
+    is an example.
+    ```
+  - This {ref}`figure <figure-example>`
+    is an example.
+``````
+
+### Referencing Images
+
+``````{list-table}
+:header-rows: 1
+:widths: 10 20 20
+
+* - Text
+  - Example
+  - Result
+* - ```md
+    {ref}`text <label>`
+    ```
+  - ```md
+    This {ref}`image <image-example>`
+    is an example.
+    ```
+  - This {ref}`image <image-example>`
+    is an example.
+
+``````
