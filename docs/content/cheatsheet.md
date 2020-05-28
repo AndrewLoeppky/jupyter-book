@@ -407,3 +407,149 @@ To add a label to your table simply include a `:name:` parameter followed by the
     ```
   - {numref}`Tbl %s <example-table>` is an example.
 ``````
+
+## Admonitions
+
+``````{list-table}
+:header-rows: 1
+:widths: 10 20 20
+
+* - Text
+  - Example
+  - Result
+* - ````md
+    ```{admonition} Title
+    text
+    ```
+  - ````md
+    ```{admonition} This is a title
+    An example of an admonition with a title.
+    ```
+    ````
+  - ```{admonition} This is a title
+    An example of an admonition with a title.
+    ```
+* - ````md
+    ```{note}
+    text
+    ```
+    ````
+    or
+    ````md
+    ```{note} text
+    some more text...
+    ```
+    ````
+  - ````md
+    ```{note} Notes require **no** arguments,
+    so content can start here.
+    ```
+    ````
+  - ```{note} Notes require **no** arguments,
+    so content can start here.
+    ```
+* - ````md
+    ```{warning} text
+    some more text...
+    ```
+    ````
+  - ````md
+    ```{warning} This is an example
+    of a warning directive.
+    ```
+    ````
+  - ```{warning} This is an example
+    of a warning directive.
+    ```
+* - ````md
+    ```{tip} text
+    some more text...
+    ```
+    ````
+  - ````md
+    ```{tip} This is an example
+    of a tip directive.
+    ```
+    ````
+  - ```{tip} This is an example
+    of a tip directive.
+    ```
+* - ````md
+    ```{caution} text
+    some more text...
+    ```
+    ````
+  - ````md
+    ```{caution} This is an example
+    of a caution directive.
+    ```
+    ````
+  - ```{caution} This is an example
+    of a caution directive.
+    ```
+* - ````md
+    ```{attention} text
+    some more text...
+    ```
+    ````
+  - ````md
+    ```{attention} This is an example
+    of an attention directive.
+    ```
+    ````
+  - ```{attention} This is an example
+    of an attention directive.
+    ```
+* - ````md
+    ```{danger} text
+    some more text...
+    ```
+    ````
+  - ````md
+    ```{danger} This is an example
+    of a danger directive.
+    ```
+    ````
+  - ```{danger} This is an example
+    of a danger directive.
+    ```
+* - ````md
+    ```{error} text
+    some more text...
+    ```
+    ````
+  - ````md
+    ```{error} This is an example
+    of an error directive.
+    ```
+    ````
+  - ```{error} This is an example
+    of an error directive.
+    ```
+* - ````md
+    ```{hint} text
+    some more text...
+    ```
+    ````
+  - ````md
+    ```{hint} This is an example
+    of a hint directive.
+    ```
+    ````
+  - ```{hint} This is an example
+    of a hint directive.
+    ```
+* - ````md
+    ```{important} text
+    some more text...
+    ```
+    ````
+  - ````md
+    ```{important} This is an example
+    of an important directive.
+    ```
+    ````
+  - ```{important} This is an example
+    of an important directive.
+    ```
+``````
