@@ -15,7 +15,7 @@ kernelspec:
 (myst_cheatsheet)=
 # MyST Cheat Sheet
 
-## Header
+## Headers
 
 ``````{list-table}
 :header-rows: 1
@@ -206,7 +206,7 @@ which is displayed below
 
 See [Citations](https://jupyterbook.org/content/citations.html?highlight=bibliography#bibliography) for more information.
 
-## List
+## Lists
 
 ### Ordered List
 
@@ -308,4 +308,102 @@ See [Citations](https://jupyterbook.org/content/citations.html?highlight=bibliog
   - [Jupyter Book][intro_page]
 
     [intro_page]: https://jupyterbook.org
+``````
+
+## Tables
+
+``````{list-table}
+:header-rows: 1
+:widths: 10 20 20
+
+* - Text
+  - Example
+  - Result
+* - ```md
+    | a    | b    |
+    | :--- | ---: |
+    | c    | d    |
+    ```
+  - ```md
+    |    Training   |   Validation   |
+    | :------------ | -------------: |
+    |        0      |        5       |
+    |     13720     |      2744      |
+    ```
+  - |    Training   |   Validation   |
+    | :------------ | -------------: |
+    |        0      |        5       |
+    |     13720     |      2744      |
+* - ````md
+     ```{list-table}
+    :header-rows: 1
+
+    * - Col1
+      - Col2
+    * - Row1 under Col1
+      - Row1 under Col2
+    * - Row2 under Col1
+      - Row2 under Col2
+    ```
+    ````
+  - ````md
+     ```{list-table}
+    :header-rows: 1
+    :name: example-table
+
+    * - Training
+      - Validation
+    * - 0
+      - 5
+    * - 13720
+      - 2744
+    ```
+    ````
+  - ```{list-table}
+    :header-rows: 1
+    :name: example-table
+
+    * - Training
+      - Validation
+    * - 0
+      - 5
+    * - 13720
+      - 2744
+    ```
+``````
+
+### Referencing Tables
+
+```{note}
+To add a label to your table simply include a `:name:` parameter followed by the label of your table. See example above.
+```
+
+``````{list-table}
+:header-rows: 1
+:widths: 10 20 20
+
+* - Text
+  - Example
+  - Result
+* - ```md
+    {numref}`label`
+    ```
+  - ```md
+    {numref}`example-table` is an example.
+    ```
+  - {numref}`example-table` is an example.
+* - ```md
+    {ref}`text <label>`
+    ```
+  - ```md
+    This {ref}`table <example-table>` is an example.
+    ```
+  - This {ref}`table <example-table>` is an example.
+* - ```md
+    {numref}`text %s <label>`
+    ```
+  - ```md
+    {numref}`Tbl %s <example-table>` is an example.
+    ```
+  - {numref}`Tbl %s <example-table>` is an example.
 ``````
