@@ -666,5 +666,74 @@ Content is not permitted in image directive.
     ```
   - This {ref}`image <image-example>`
     is an example.
+``````
 
+## Math
+
+``````{list-table}
+:header-rows: 1
+:widths: 10 20 20
+
+* - Token
+  - Example
+  - Result
+* - In-line
+  - ```md
+    This is an example of an
+    in-line equation $z=\sqrt{x^2+y^2}$.
+    ```
+  - This is an example of an
+    in-line equation $z=\sqrt{x^2+y^2}$.
+* - Math blocks
+  - ```md
+    This is an example of a
+    math block
+
+    $$
+    z=\sqrt{x^2+y^2}
+    $$
+    ```
+  - This is an example of a
+    math block
+
+    $$
+    z=\sqrt{x^2+y^2}
+    $$
+* - Math directives
+  - ````md
+    This is an example of a
+    math directive with a
+    label
+    ```{math}
+    :label: eq-label
+
+    z=\sqrt{x^2+y^2}
+    ```
+    ````
+  - This is an example of a
+    math directive with a
+    label
+    ```{math}
+    :label: eq-label
+
+    z=\sqrt{x^2+y^2}
+    ```
+``````
+
+### Referencing Math Directives
+
+``````{list-table}
+:header-rows: 1
+:widths: 10 20 20
+
+* - Text
+  - Example
+  - Result
+* - ```md
+    {eq}`label`
+    ```
+  - ```md
+    Check out equation {eq}`eq-label`.
+    ```
+  - Check out equation {eq}`eq-label`.
 ``````
