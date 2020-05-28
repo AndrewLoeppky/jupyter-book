@@ -968,3 +968,23 @@ The following `tags` can be applied to code cells by introducing them as options
     +++ {"meta": "data"}
     a block break
 ``````
+
+## Reference Documents
+
+``````{list-table}
+:header-rows: 1
+:widths: 10 20 20
+
+* - Token
+  - Example
+  - Result
+* - ```md
+    {doc}`path/to/document`
+    ```
+  - ```md
+    See {doc}`../content/citations`
+    for more information.
+    ```
+  - See {doc}`../content/citations`
+    for more information.
+``````
