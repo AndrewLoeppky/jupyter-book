@@ -73,6 +73,11 @@ Another alternative is to use markdown syntax:
 [MyST syntax lecture](myst_cheatsheet)
 ```
 
+To reference a target header introduced in a different file try
+```md
+{ref}`hiding/remove-content`
+```
+
 ## Quote
 
 ``````{list-table}
@@ -940,4 +945,26 @@ The following `tags` can be applied to code cells by introducing them as options
     while True print('Hello world')
     ```
     ````
+``````
+
+## Block Break
+
+``````{list-table}
+:header-rows: 1
+:widths: 10 20 20
+
+* - Token
+  - Example
+  - Result
+* - ```md
+    +++
+    ```
+  - ```md
+    This is an example of
+    +++ {"meta": "data"}
+    a block break
+    ```
+  - This is an example of
+    +++ {"meta": "data"}
+    a block break
 ``````
