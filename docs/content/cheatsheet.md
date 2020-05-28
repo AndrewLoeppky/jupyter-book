@@ -1,6 +1,6 @@
 ---
 jupytext:
-  formats: ipynb,md:myst
+  formats: md:myst
   text_representation:
     extension: .md
     format_name: myst
@@ -362,6 +362,40 @@ See [Citations](https://jupyterbook.org/content/citations.html?highlight=bibliog
   - ```{list-table}
     :header-rows: 1
     :name: example-table
+
+    * - Training
+      - Validation
+    * - 0
+      - 5
+    * - 13720
+      - 2744
+    ```
+* - ````md
+     ```{list-table} title
+    :header-rows: 1
+
+    * - Col1
+      - Col2
+    * - Row1 under Col1
+      - Row1 under Col2
+    * - Row2 under Col1
+      - Row2 under Col2
+    ```
+    ````
+  - ````md
+     ```{list-table} Table with a title
+    :header-rows: 1
+
+    * - Training
+      - Validation
+    * - 0
+      - 5
+    * - 13720
+      - 2744
+    ```
+    ````
+  - ```{list-table} Table with a title
+    :header-rows: 1
 
     * - Training
       - Validation
@@ -736,4 +770,174 @@ Content is not permitted in image directive.
     Check out equation {eq}`eq-label`.
     ```
   - Check out equation {eq}`eq-label`.
+``````
+
+## Code
+
+### In-line Code
+
+**Example**:
+```md
+Wrap inline code blocks in backticks: `boolean example = true;`.
+```
+
+**Result**:
+
+Wrap inline code blocks in backticks: `boolean example = true;`.
+
+### Code and Syntax Highlighting
+
+**Example**:
+````md
+```python
+note = "Python syntax highlighting"
+print(node)
+```
+````
+or
+````md
+```
+No syntax highlighting if no language
+is indicated.
+```
+````
+
+**Result**:
+```python
+note = "Python syntax highlighting"
+print(node)
+```
+or
+```
+No syntax highlighting if no language
+is indicated.
+```
+
+### Executable Code
+
+````{warning}
+Make sure to include this front-matter YAML block at the beginning of your `.ipynb` or `.md` files.
+```
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: '0.8'
+    jupytext_version: 1.4.1+dev
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+```
+````
+
+**Example**:
+````md
+```{code-cell} ipython3
+note = "Python syntax highlighting"
+print(note)
+```
+````
+
+**Result**:
+```{code-cell} ipython3
+note = "Python syntax highlighting"
+print(note)
+```
+
+#### Tags
+
+The following `tags` can be applied to code cells by introducing them as options:
+
+``````{list-table}
+:header-rows: 1
+:widths: 10 20 20
+
+* - Tag option
+  - Description
+  - Example
+* - `"full-width"`
+  - Cell takes up all of the horizontal space
+  - ````md
+    ```{code-cell} ipython3
+    :tags: ["full-width"]
+    print("This is a test.")
+    ```
+    ````
+* - `"output_scroll"`
+  - Make output cell scrollable
+  - ````md
+    ```{code-cell} ipython3
+    :tags: ["output_scroll"]
+    for ii in range(100):
+      print("This is a test.")
+    ```
+    ````
+* - `"margin"`
+  - Move code cell to the right margin
+  - ````md
+    ```{code-cell} ipython3
+    :tags: ["margin"]
+    print("This is a test.")
+    ```
+    ````
+* - `"hide-input""`
+  - Hide cell but the display the outputs
+  - ````md
+    ```{code-cell} ipython3
+    :tags: ["hide-input""]
+    print("This is a test.")
+    ```
+    ````
+* - `"hide-output"`
+  - Hide the outputs of a cell
+  - ````md
+    ```{code-cell} ipython3
+    :tags: ["hide-output"]
+    print("This is a test.")
+    ```
+    ````
+* - `"hide-cell"`
+  - Hides inputs and outputs of code cell
+  - ````md
+    ```{code-cell} ipython3
+    :tags: ["hide-cell"]
+    print("This is a test.")
+    ```
+    ````
+* - `"remove-input"`
+  - Remove the inputs of a cell
+  - ````md
+    ```{code-cell} ipython3
+    :tags: ["remove-input"]
+    print("This is a test.")
+    ```
+    ````
+* - `"remove-output"`
+  - Remove the outputs of a cell
+  - ````md
+    ```{code-cell} ipython3
+    :tags: ["remove-output"]
+    print("This is a test.")
+    ```
+    ````
+* - `"remove-cell"`
+  - Remove the entire code cell
+  - ````md
+    ```{code-cell} ipython3
+    :tags: ["remove-cell"]
+    print("This is a test.")
+    ```
+    ````
+* - `"raises-exception"`
+  - Mark cell as "expected to error"
+  - ````md
+    ```{code-cell} ipython3
+    :tags: ["raises-exception"]
+    while True print('Hello world')
+    ```
+    ````
 ``````
